@@ -3,91 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4654da">
-  <meta name="description" content="了解万拓传媒AI漫剧实训：从剧本分镜、AI画面到剪辑成片，查看45天学习与求职支持安排、课程费用，完成学习准备自测并联系咨询。">
+  <meta name="theme-color" content="#075c9c">
+  <meta name="description" content="万拓传媒AI漫剧实训。从剧本分镜、AI画面到剪辑成片，了解45天学习与求职支持、课程费用、公司与合作单位，微信咨询当前班次。">
   <title>万拓传媒AI漫剧实训</title>
   <link rel="icon" href="logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="styles-onetop.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles-brand.css">
+  <script src="app-brand.js" defer></script>
 </head>
-<body>
+<body data-page="home">
 <a class="skip-link" href="#main">跳到正文</a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="#" aria-label="万拓传媒AI漫剧实训首页"><img class="brand-logo" src="logo.jpg" width="128" height="71" alt="ONE TOP 文化传媒 AIGC"></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="展开导航"><span></span><span></span></button>
-    <nav id="main-nav" aria-label="主导航"><a href="#creation">学什么</a><a href="#course">怎么学</a><a href="#check">适合我吗</a><a href="#fee">费用与服务</a></nav>
-    <button class="button header-contact" data-contact>微信咨询 <span class="button-dot" aria-hidden="true"></span></button>
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="万拓传媒AI漫剧实训首页"><img class="brand-logo" src="logo.jpg" width="128" height="71" alt="ONE TOP 文化传媒 AIGC"></a>
+    <nav id="main-nav" aria-label="主导航"><a href="index.html" aria-current="page">首页</a><a href="course.html">课程实训</a><a href="company.html">公司简介</a><a href="faq.html">常见问题</a></nav>
+    <button class="button button-primary header-contact" type="button" data-contact>咨询课程</button>
   </div>
 </header>
 <main id="main">
-  <section class="hero container" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="intro-label"><span></span>为想认真做内容的人</p>
-      <h1 id="hero-title">让脑海里的故事，<br>有自己的画面。</h1>
-      <p class="hero-description">从剧本、分镜到剪辑成片，<br>把AI工具用进一套完整的漫剧创作流程。</p>
-      <div class="hero-actions"><a class="button button-primary" href="#course">看看课程怎么学 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><a class="text-link" href="#check">先看看适不适合我</a></div>
-      <div class="hero-meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.1 7-12a7 7 0 0 0-14 0c0 6.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>武汉实训</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 11h16"/></svg>45天学习与求职支持计划</span></div>
-    </div>
-    <figure class="hero-art">
-      <div class="art-window"><img src="hero.png" alt="AI生成概念画面：穿橙色外套的年轻女性站在雨后城市列车站台" fetchpriority="high" width="1672" height="941"><span class="art-tag">原创概念分镜</span><div class="art-caption"><span>故事，从一个镜头开始。</span><span class="frame-corners" aria-hidden="true">⌜&nbsp;⌟</span></div></div>
-      <figcaption><span class="caption-line"></span>AI生成画面，仅作创作流程示意，非学员作品。</figcaption>
-      <div class="art-note" aria-hidden="true"><span class="tiny-frame"></span>先有故事<br><strong>再让画面发生</strong></div>
-    </figure>
+
+  <section class="home-hero" aria-labelledby="home-title">
+    <img class="home-hero-image" src="hero.png" alt="AI概念分镜：年轻女性站在雨后的城市列车站台" width="1672" height="941" fetchpriority="high">
+    <div class="home-hero-shade" aria-hidden="true"></div>
+    <div class="container home-hero-copy"><p class="hero-kicker">万拓传媒 AI漫剧实训</p><h1 id="home-title">让故事，<br>成为看得见的作品。</h1><p class="hero-description">从剧本分镜到剪辑成片，<br>系统练习AI漫剧制作。</p><a class="button button-primary" href="course.html">了解课程</a></div>
+    <p class="home-art-note">AI概念画面，非学员作品</p>
   </section>
-
-  <div class="course-at-a-glance"><div class="container glance-inner"><p>一段完整的<br><b>学习安排</b></p><div><strong>20<small>天</small></strong><span>系统制作学习</span></div><div><strong>7<small>天</small></strong><span>面试作品打磨</span></div><div><strong>3<small>天</small></strong><span>面试交流训练</span></div><div><strong>15<small>天</small></strong><span>线上求职陪跑</span></div></div></div>
-
-  <section class="section container creation" id="creation" aria-labelledby="creation-title">
-    <div class="section-heading"><div><p class="section-label">学什么</p><h2 id="creation-title">一部漫剧，<br>要把这些事连起来。</h2></div><p>会生成一张图，是起点。<br>故事、角色、镜头和声音，<br>一起决定观众愿不愿意看下去。</p></div>
-    <div class="creation-workbench">
-      <div class="creation-tabs" role="tablist" aria-label="漫剧制作环节"><button id="process-tab-0" role="tab" aria-selected="true" aria-controls="process-panel" data-process="0"><span>01</span>剧本与分镜</button><button id="process-tab-1" role="tab" aria-selected="false" aria-controls="process-panel" tabindex="-1" data-process="1"><span>02</span>角色与画面</button><button id="process-tab-2" role="tab" aria-selected="false" aria-controls="process-panel" tabindex="-1" data-process="2"><span>03</span>镜头与动态</button><button id="process-tab-3" role="tab" aria-selected="false" aria-controls="process-panel" tabindex="-1" data-process="3"><span>04</span>剪辑与声音</button></div>
-      <div class="process-panel" id="process-panel" role="tabpanel" tabindex="0" aria-labelledby="process-tab-0">
-        <div class="story-paper"><span class="paper-label">一个简单的故事练习</span><p id="process-example">末班车进站时，她收到一条没有署名的消息。原本熟悉的站台，忽然变得陌生。</p><div class="paper-bottom"><span id="process-note">先确定人物、目标和转折</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4 5 5-11 11H4v-5L15 4Zm-2 2 5 5"/></svg></div></div>
-        <div class="process-description"><span class="process-count" id="process-count">第一个环节</span><h3 id="process-title">先想清楚，镜头要讲什么。</h3><p id="process-body">拆解故事情节，设计景别与镜头顺序。练习把一段文字，转换为可以执行的分镜。</p><ul id="process-skills"><li>剧本适配与情节拆解</li><li>镜头语言与分镜设计</li><li>画面提示词组织</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="course-section" id="course" aria-labelledby="course-title"><div class="container">
-    <div class="section-heading"><div><p class="section-label">怎么学</p><h2 id="course-title">先练制作，再磨作品。<br>求职准备接着做。</h2></div><p>按照项目课程资料，<br>30天学习与作品训练，<br>接续15天线上求职支持。</p></div>
-    <div class="course-layout"><div class="course-steps" role="tablist" aria-label="学习阶段" aria-orientation="vertical">
-      <button id="course-tab-0" role="tab" aria-controls="course-panel" aria-selected="true" data-course="0"><span class="course-day">第1—20天</span><span class="course-name">系统制作学习</span><span class="course-plus" aria-hidden="true">↗</span></button>
-      <button id="course-tab-1" role="tab" aria-controls="course-panel" aria-selected="false" tabindex="-1" data-course="1"><span class="course-day">第21—27天</span><span class="course-name">面试作品打磨</span><span class="course-plus" aria-hidden="true">↗</span></button>
-      <button id="course-tab-2" role="tab" aria-controls="course-panel" aria-selected="false" tabindex="-1" data-course="2"><span class="course-day">第28—30天</span><span class="course-name">面试交流训练</span><span class="course-plus" aria-hidden="true">↗</span></button>
-      <button id="course-tab-3" role="tab" aria-controls="course-panel" aria-selected="false" tabindex="-1" data-course="3"><span class="course-day">第31—45天</span><span class="course-name">线上求职陪跑</span><span class="course-plus" aria-hidden="true">↗</span></button>
-    </div><div class="course-detail" id="course-panel" role="tabpanel" tabindex="0" aria-labelledby="course-tab-0"><span class="detail-kicker" id="course-kicker">把制作流程练起来</span><h3 id="course-detail-title">从工具实操，走到完整项目。</h3><p id="course-detail-body">学习AI绘图、分镜、配音与剪辑，练习人物和风格一致性，再把各个环节接成完整的制作流程。</p><ul id="course-detail-list"><li>AI图像与视频工具操作</li><li>角色设定、分镜和镜头衔接</li><li>后期合成、调色、声音与包装</li></ul><div class="learning-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span id="course-detail-note">重点：理解完整流程，完成项目练习。</span></div></div></div>
-    <p class="section-footnote">以上按已有课程资料整理。具体开课日期、授课形式、课时与服务安排，请在报名时确认。</p>
-  </div></section>
-
-  <section class="section container readiness" id="check" aria-labelledby="check-title">
-    <div class="readiness-copy"><p class="section-label">适合我吗</p><h2 id="check-title">先看准备，<br>再决定报名。</h2><p>你可以先想清楚自己的目标和时间。<br>不用留手机号，先做个简单判断。</p><ul class="readiness-list"><li><span>01</span><div><strong>愿意动手，也愿意修改</strong><p>练习需要反复尝试，成片也需要不断调整。</p></div></li><li><span>02</span><div><strong>能安排相对集中的学习时间</strong><p>先确认自己的时间和班次安排能否匹配。</p></div></li><li><span>03</span><div><strong>理解课程费用与设备要求</strong><p>准备独立显卡笔记本，具体配置可先咨询。</p></div></li></ul><p class="eligibility-note">当前资料招生条件为大专及以上、28岁及以下，并需审核。自测仅供了解学习准备，不能替代报名审核。</p></div>
-    <form class="readiness-form" id="readiness-form"><span class="form-heading">花一分钟，理清你的起点</span>
-      <fieldset><legend>你最希望解决什么？</legend><label class="choice"><input type="radio" name="goal" value="job" required><span>为求职或转行做准备</span></label><label class="choice"><input type="radio" name="goal" value="skill"><span>提升已有的剪辑、设计或内容能力</span></label><label class="choice"><input type="radio" name="goal" value="interest"><span>兴趣学习，先了解一下</span></label></fieldset>
-      <fieldset><legend>你目前的制作基础？</legend><select name="experience" required aria-label="选择制作基础"><option value="">请选择</option><option value="experienced">有剪辑、设计或内容制作经验</option><option value="beginner">熟悉电脑，制作方面是零基础</option><option value="computer">电脑操作也需要从头学习</option></select></fieldset>
-      <fieldset><legend>能安排集中的学习时间吗？</legend><div class="choice-row"><label class="choice"><input type="radio" name="time" value="ready" required><span>可以安排</span></label><label class="choice"><input type="radio" name="time" value="discuss"><span>还需要协调</span></label></div></fieldset>
-      <button class="button button-primary form-submit" type="submit">看看我的准备建议 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></button>
-      <p class="form-privacy">不收集联系方式；答案仅用于本页生成建议。</p>
-      <div class="quiz-result" id="quiz-result" hidden tabindex="-1" aria-live="polite"><h3 id="result-title"></h3><p id="result-copy"></p><button class="text-link" type="button" id="open-personal-contact">带着这些问题咨询 <span aria-hidden="true">↗</span></button></div>
-    </form>
-  </section>
-
-  <section class="fee-section" id="fee" aria-labelledby="fee-title"><div class="container fee-layout"><div class="fee-price"><p class="section-label">费用先讲清楚</p><h2 id="fee-title">认真了解，<br>再做决定。</h2><div class="price"><span>¥</span>15,800</div><p class="price-caption">项目资料标价 / 人<br>实际收费和费用明细请咨询确认</p><button class="button button-white" data-contact>获取课程与费用说明 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button></div><div class="fee-service"><h3>课程资料中的服务安排</h3><ul class="service-list"><li>系统学习与制作练习</li><li>作品打磨与作品集准备</li><li>简历优化与模拟面试</li><li>岗位匹配、投递与面试支持</li></ul><div class="before-sign"><h3>报名前，逐项确认</h3><p>开课时间与授课形式；设备、工具、算力及食宿费用；就业城市、岗位与薪资条件；服务期限、考核要求和退款约定。</p><p>岗位录用由用人单位考核决定。就业服务的具体条件与退款安排，应写入双方确认的合同。</p></div></div></div></section>
-
-  <section class="section container faq-section" aria-labelledby="faq-title"><div class="faq-heading"><p class="section-label">你可能还想问</p><h2 id="faq-title">把问题问清楚。</h2><p>重要的事情，<br>报名之前就说好。</p></div><div class="faq-list">
-    <details><summary>零基础可以了解这门课吗？<span aria-hidden="true">+</span></summary><p>课程资料从工具操作与制作流程开始。是否适合你，还需要结合电脑基础、学习时间和目标判断。建议先看课程说明，并让老师了解你的基础后再决定。</p></details>
-    <details><summary>课程在线上，还是线下？<span aria-hidden="true">+</span></summary><p>目前资料包含武汉实训与线上求职支持。具体班次、到课安排以及是否提供适合你的线上形式，请在报名之前向咨询人员确认。</p></details>
-    <details><summary>学习后提供哪些就业服务？<span aria-hidden="true">+</span></summary><p>资料中的就业服务包括作品与简历准备、模拟面试、岗位匹配、投递和面试支持。具体城市、薪资、服务期限及相关条件，需要在签约前逐项确认；实际录用由用人单位考核决定。</p></details>
-    <details><summary>需要准备什么设备？<span aria-hidden="true">+</span></summary><p>项目资料要求配备独立显卡笔记本。具体显卡、内存、工具账号和算力要求，请先确认后再购买，避免提前购置不适用的设备。</p></details>
-    <details><summary>如果时间安排变化，或需要退款怎么办？<span aria-hidden="true">+</span></summary><p>报名之前，应明确取消、退学、考核和就业服务未达到约定时分别如何处理，包括适用条件、所需材料和退款到账时间。请以双方确认的具体合同条款为准。</p></details>
-  </div></section>
-
-  <section class="contact-section container"><div><span class="contact-scribble" aria-hidden="true">✦</span><h2>先聊聊你的起点。</h2><p>告诉我们你会什么、想做什么，<br>再一起看看这份学习安排是否适合你。</p></div><div class="contact-action"><button class="button button-primary" data-contact>微信聊一聊 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button><span>微信号 <b>2898220367</b></span></div></section>
+  <div class="home-entry-bar container"><a href="company.html"><div><strong>关于万拓</strong><p>了解公司与合作伙伴</p></div><span aria-hidden="true">↗</span></a><a href="course.html"><div><strong>AI漫剧实训</strong><p>查看学习安排与课程费用</p></div><span aria-hidden="true">↗</span></a></div>
 </main>
-<footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#" aria-label="万拓传媒AI漫剧实训首页"><img class="brand-logo" src="logo.jpg" width="128" height="71" alt="ONE TOP 文化传媒 AIGC"></a><p>课程提供方：武汉越咏升传媒有限公司<br>本页依据项目资料整理，具体班次、收费与服务条件以最终书面约定为准。</p><a href="#main">回到顶部 ↑</a></div></footer>
-<div class="mobile-contact-bar"><span>先了解课程，再决定报名</span><button class="button button-primary" data-contact>微信咨询</button></div>
-
-<dialog id="contact-dialog" aria-labelledby="contact-dialog-title"><button class="dialog-close" aria-label="关闭咨询窗口" type="button">×</button><span class="dialog-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M26 14c0 6-4.6 10-11 10-1.4 0-3-.3-4.2-.8L5 26l1.6-5C4.9 19.3 4 17.1 4 14 4 8 8.6 4 15 4s11 4 11 10Z"/><circle cx="11" cy="13" r="1"/><circle cx="19" cy="13" r="1"/></svg></span><h2 id="contact-dialog-title">微信聊聊你的学习计划</h2><p class="dialog-description">复制微信号，打开微信搜索添加。<br>可以先索取课程表、费用明细与服务说明。</p><div class="wechat-number"><span>微信号</span><strong id="wechat-number">2898220367</strong></div><button class="button button-primary" id="copy-wechat">复制微信号</button><div class="consultation-message"><label for="consultation-text">不知道怎么开口？可以带上这段话</label><textarea id="consultation-text" rows="4" readonly>你好，我想了解AI漫剧实训。请发我当前班次的课程表、授课形式、15,800元费用明细，以及就业服务和退款条件说明。</textarea><button class="text-link" id="copy-message" type="button">复制咨询内容</button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></dialog>
-<div class="toast" role="status" aria-live="polite" id="toast"></div>
+<footer class="site-footer"><div class="container footer-inner"><p>课程资料所列提供方：武汉万拓传媒有限公司<br>实际签约、收费与服务主体请在报名前确认，具体条件以书面约定为准。</p><a href="#main">回到顶部</a></div></footer>
+<dialog id="contact-dialog" aria-labelledby="contact-dialog-title"><button class="dialog-close" type="button" aria-label="关闭咨询窗口">×</button><h2 id="contact-dialog-title">微信咨询课程</h2><p class="dialog-description">添加微信，获取课表、费用明细与服务说明。</p><div class="wechat-number"><span>微信号</span><strong id="wechat-number">2898220367</strong></div><button class="button button-primary" type="button" id="copy-wechat">复制微信号</button><p class="copy-status" id="copy-status" role="status" aria-live="polite">复制后，打开微信搜索添加。</p></dialog>
 </body>
 </html>
