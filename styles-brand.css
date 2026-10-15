@@ -140,6 +140,24 @@ button:focus-visible, a:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .price small { margin-right: 6px; font-size: 19px; font-weight: 500; }
 .price-caption { margin-top: 6px; color: var(--muted); font-size: 12px; }
 .fee-summary { max-width: 660px; color: #536c82; font-size: 14px; }
+.tuition { overflow: hidden; border: 1px solid var(--line); border-radius: 10px; }
+.tuition-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 32px; background: var(--mist); }
+.tuition-header h2 { color: var(--deep); font-size: 24px; font-weight: 600; line-height: 1.4; }
+.tuition-header p { margin-top: 6px; color: var(--muted); font-size: 13px; }
+.tuition-price { flex-shrink: 0; display: flex; align-items: baseline; gap: 8px; }
+.tuition-price strong { color: var(--blue); font-size: 38px; font-weight: 600; line-height: 1.2; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.tuition-price small { margin-right: 5px; font-size: 22px; font-weight: 500; }
+.tuition-price > span { color: var(--muted); font-size: 13px; }
+.tuition-services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin: 0; padding: 6px 32px 0; list-style: none; }
+.tuition-services li { position: relative; padding: 23px 0 23px 25px; border-bottom: 1px solid var(--line); }
+.tuition-services li::before { position: absolute; top: 23px; left: 0; color: var(--orange); font-size: 16px; font-weight: 600; content: "✓"; }
+.tuition-services h3 { color: var(--deep); font-size: 16px; font-weight: 550; line-height: 1.8; }
+.tuition-services p { margin-top: 6px; color: #536c82; font-size: 14px; line-height: 1.85; }
+.tuition-note { padding: 18px 32px; color: var(--muted); font-size: 12px; }
+.enrollment-info { margin-top: 18px; }
+.enrollment-info .enrollment-details { margin-top: 0; border-bottom: 1px solid var(--line); }
+.enrollment-info summary { min-height: 60px; color: var(--text); font-size: 14px; }
+.enrollment-info .details-body strong { color: var(--deep); font-weight: 550; }
 .enrollment-details { margin-top: 12px; }
 summary { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 54px; padding: 13px 0; cursor: pointer; list-style: none; }
 summary::-webkit-details-marker { display: none; }
@@ -295,6 +313,18 @@ a.partner-mark:focus-visible { outline-offset: 3px; }
   .price small { margin-right: 3px; font-size: 16px; }
   .price-caption { font-size: 11px; }
   .fee-summary { font-size: 12px; line-height: 1.85; }
+  .tuition-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px 20px; }
+  .tuition-header h2 { font-size: 22px; }
+  .tuition-header p { font-size: 12px; }
+  .tuition-price strong { font-size: 36px; }
+  .tuition-services { grid-template-columns: 1fr; gap: 0; padding: 0 20px; }
+  .tuition-services li { padding-block: 19px; }
+  .tuition-services li::before { top: 19px; }
+  .tuition-services h3 { font-size: 15px; }
+  .tuition-services p { font-size: 13px; }
+  .tuition-note { padding: 16px 20px; font-size: 11px; }
+  .enrollment-info { margin-top: 14px; }
+  .enrollment-info summary { min-height: 58px; font-size: 13px; }
   .enrollment-details { margin-top: 8px; }
   .details-body { padding-right: 16px; font-size: 13px; }
   .company-section { padding-block: 36px; }
