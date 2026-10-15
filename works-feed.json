@@ -1,0 +1,25 @@
+---
+layout: null
+---
+{
+  "version": 1,
+  "files": [
+  {%- assign allowed = ".jpg,.jpeg,.png,.webp,.mp4,.webm" | split: "," -%}
+  {%- assign files = site.static_files | sort: "path" -%}
+  {%- assign first = true -%}
+  {%- for file in files -%}
+    {%- assign prefix = file.path | slice: 0, 7 -%}
+    {%- assign extension = file.extname | downcase -%}
+    {%- if prefix == "/works/" -%}
+      {%- if allowed contains extension -%}
+        {%- unless first -%},{%- endunless -%}
+        {
+          "name": {{ file.name | jsonify }},
+          "path": {{ file.path | remove_first: "/" | jsonify }}
+        }
+        {%- assign first = false -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  ]
+}

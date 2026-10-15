@@ -1,0 +1,20 @@
+.works-admin { max-width: 960px; padding-block: 52px 64px; }
+.works-admin-intro { max-width: 690px; }
+.works-admin h2 { color: var(--deep); font-size: 28px; line-height: 1.5; }
+.works-admin-intro > p { margin-top: 14px; color: var(--muted); }
+.works-publish-steps { list-style: none; margin: 36px 0 30px; padding: 0; counter-reset: publish-step; }
+.works-publish-steps li { position: relative; padding: 22px 0 22px 52px; border-top: 1px solid var(--line); counter-increment: publish-step; }
+.works-publish-steps li::before { position: absolute; left: 0; top: 25px; content: counter(publish-step); color: var(--blue); font-size: 22px; font-weight: 600; }
+.works-publish-steps h3 { font-size: 18px; color: var(--deep); }
+.works-publish-steps p { color: var(--muted); margin-top: 8px; font-size: 14px; }
+.works-file-example { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 14px; }
+.works-file-example span { padding: 8px 14px; background: var(--mist); color: var(--blue); border-radius: 4px; font-size: 14px; }
+.works-upload-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.works-admin-link, .works-admin-links a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; font-size: 14px; }
+.works-upload-note { margin-top: 14px; font-size: 12px; color: var(--muted); }
+.works-upload-help { margin-top: 36px; border-block: 1px solid var(--line); }
+.works-upload-help summary { padding-block: 20px; cursor: pointer; color: var(--deep); }
+.works-upload-help > div { padding-bottom: 24px; }
+.works-upload-help p { margin-bottom: 12px; font-size: 14px; color: var(--muted); }
+.works-admin-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 18px; }
+@media (max-width: 640px) { .works-admin { padding-block: 30px 40px; } .works-admin h2 { font-size: 22px; } .works-admin-intro > p { font-size: 14px; } .works-publish-steps { margin-top: 24px; } .works-publish-steps li { padding-left: 34px; } .works-publish-steps h3 { font-size: 16px; } .works-upload-actions { gap: 20px; } }

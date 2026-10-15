@@ -1,0 +1,5 @@
+encoding: UTF-8
+exclude:
+  - README.md
+  - works/README.md
+  - works-local.json

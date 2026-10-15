@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075c9c">
+  <meta name="description" content="万拓传媒作品上传与管理入口。">
+  <title>作品管理｜万拓传媒AI漫剧实训</title>
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="styles-brand.css">
+  <link rel="stylesheet" href="works-admin.css">
+  <meta name="robots" content="noindex">
+  <script src="app-brand.js" defer></script>
+</head>
+<body data-page="works-admin">
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="index.html" aria-label="万拓传媒AI漫剧实训首页"><img class="brand-logo" src="logo.jpg" width="128" height="71" alt="ONE TOP 文化传媒 AIGC"></a>
+    <nav id="main-nav" aria-label="主导航"><a href="index.html">首页</a><a href="course.html">课程实训</a><a href="works.html">作品展示</a><a href="company.html">公司简介</a><a href="faq.html">常见问题</a></nav>
+    <button class="button button-primary header-contact" type="button" data-contact>咨询课程</button>
+  </div>
+</header>
+<main id="main">
+  <section class="page-banner"><div class="container"><p class="breadcrumb"><a href="index.html">首页</a><span>/</span><a href="works.html">作品展示</a><span>/</span>作品管理</p><h1>上传与管理作品</h1><p>由万拓工作人员上传，发布后在官网公开展示。</p></div></section>
+  <section class="works-admin container" aria-labelledby="upload-heading">
+    <div class="works-admin-intro"><h2 id="upload-heading">上传一组视频与封面，就能更新作品墙。</h2><p>使用你们现有的 GitHub 管理账号发布。只有拥有网站编辑权限的账号，才能修改公开作品。</p></div>
+    <ol class="works-publish-steps">
+      <li><h3>准备视频和封面</h3><p>给同一作品的视频和封面取相同名称，例如：</p><div class="works-file-example"><span>01-作品名称.mp4</span><span>01-作品名称.jpg</span></div><p>名称会显示为作品标题，前面的数字决定顺序。也可以只上传图片作品。</p></li>
+      <li><h3>进入上传窗口</h3><p>点击下方按钮，用管理账号登录。选择 <span lang="en">Choose your files</span>，一起选中视频和封面。</p></li>
+      <li><h3>提交并等待发布</h3><p>上传完成后点击 <span lang="en">Commit changes</span>。发布完成后刷新作品页，所有访客都能查看。</p></li>
+    </ol>
+    <div class="works-upload-actions"><a class="button button-primary" href="https://github.com/louyuhong807-dotcom/wantuoMedia-ai/upload/main/works" target="_blank" rel="noopener noreferrer">前往上传作品</a><a class="works-admin-link" href="works.html">查看公开作品</a></div>
+    <p class="works-upload-note">上传窗口将在新页面打开；仅选择文件还不会发布，需要在 GitHub 确认提交。</p>
+    <details class="works-upload-help"><summary>文件要求与后续修改</summary><div><p><strong>视频：</strong>建议 MP4（H.264），单条不超过 20 MB；GitHub 网页单文件上限为 25 MiB。长片请先导出展示片段。</p><p><strong>封面：</strong>支持 JPG、PNG、WebP，建议 9:16 竖图、720 × 1280 像素。没有封面时会显示作品标题。</p><p><strong>顺序：</strong>使用 01、02、03 开头；名称相同的视频与图片会合为一个作品。</p><p><strong>替换与下架：</strong>同名文件重新上传可替换。下架时在作品目录删除对应视频与封面，提交后重新发布；历史版本仍保留在 GitHub 中。</p><p><strong>发布状态：</strong>若刚上传还未显示，可先查看发布状态，完成后刷新网页。</p><div class="works-admin-links"><a href="https://github.com/louyuhong807-dotcom/wantuoMedia-ai/tree/main/works" target="_blank" rel="noopener noreferrer">管理已上传文件</a><a href="https://github.com/louyuhong807-dotcom/wantuoMedia-ai/actions" target="_blank" rel="noopener noreferrer">查看发布状态</a></div></div></details>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><p>课程资料所列提供方：武汉万拓传媒有限公司<br>实际签约、收费与服务主体请在报名前确认，具体条件以书面约定为准。</p><div class="footer-management-links"><a href="works-admin.html">作品管理</a><a href="#main">回到顶部</a></div></div></footer>
+<div class="mobile-contact-bar"><div><strong>45天线下实训</strong><p>先了解，再决定</p></div><button class="button button-primary" type="button" data-contact>咨询课程</button></div>
+<dialog id="contact-dialog" aria-labelledby="contact-dialog-title"><button class="dialog-close" type="button" aria-label="关闭咨询窗口">×</button><h2 id="contact-dialog-title">微信咨询课程</h2><p class="dialog-description">添加微信，获取课表、费用明细与服务说明。</p><div class="wechat-number"><span>微信号</span><strong id="wechat-number">2898220367</strong></div><button class="button button-primary" type="button" id="copy-wechat">复制微信号</button><p class="copy-status" id="copy-status" role="status" aria-live="polite">复制后，打开微信搜索添加。</p></dialog>
+</body>
+</html>

@@ -170,6 +170,19 @@ button:focus-visible, a:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .salary-employer-note { grid-column: 2; margin-top: -4px; color: var(--muted); font-size: 12px; }
 .employment-notes { margin-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.9; }
 .employment-notes p + p { margin-top: 6px; }
+.employment-entry { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; padding: 24px 28px; border-left: 3px solid var(--orange); border-radius: 4px; background: var(--mist); }
+.employment-entry h2 { color: var(--deep); font-size: 22px; font-weight: 550; }
+.employment-entry p { margin-top: 5px; color: var(--muted); font-size: 13px; }
+.employment-entry-action { flex-shrink: 0; color: var(--blue); font-size: 14px; }
+.employment-entry-action > span { margin-left: 12px; }
+.employment-entry:hover { background: #eaf2f9; }
+.employment.employment-page { margin: 0 auto; }
+.employment-page { padding-block: 44px 52px; border-top: 0; }
+.employment-page .career-paths { margin-top: 0; }
+.page-banner .employment-banner-promise { display: flex; align-items: baseline; gap: 14px; font-size: 14px; }
+.employment-banner-promise strong { font-weight: 500; }
+.employment-banner-promise span { font-size: 12px; }
+.inline-link { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 1000px) {
   .career-paths { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
   .employer-row { grid-template-columns: 150px minmax(0, 1fr); gap: 16px 24px; padding: 22px; }
@@ -313,7 +326,7 @@ a.partner-mark:focus-visible { outline-offset: 3px; }
   .brand { justify-self: start; }
   .brand-logo { width: 85px; }
   .header-contact { grid-column: 2; grid-row: 1; min-height: 36px; padding: 8px 17px; font-size: 13px; }
-  #main-nav { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-self: stretch; gap: 0; width: 100%; margin: 0; border-top: 1px solid #edf1f5; }
+  #main-nav { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-self: stretch; gap: 0; width: 100%; margin: 0; border-top: 1px solid #edf1f5; }
   #main-nav a { justify-content: center; min-height: 48px; font-size: 13px; }
   #main-nav a::after { right: 22%; bottom: 0; left: 22%; }
   .home-hero { min-height: 500px; height: calc(83svh - var(--header-height)); max-height: 600px; }
@@ -380,6 +393,14 @@ a.partner-mark:focus-visible { outline-offset: 3px; }
   .salary-levels dt { font-size: 11px; }
   .salary-employer-note { grid-column: 1; font-size: 11px; }
   .employment-notes { font-size: 11px; }
+  .employment-entry { align-items: flex-start; gap: 16px; margin-bottom: 24px; padding: 20px 18px; }
+  .employment-entry h2 { font-size: 19px; }
+  .employment-entry p { font-size: 11px; }
+  .employment-entry-action { padding-top: 4px; font-size: 12px; }
+  .employment-entry-action > span { margin-left: 5px; }
+  .employment-page { margin-block: 0; padding-block: 30px 36px; }
+  .page-banner .employment-banner-promise { font-size: 13px; }
+  .employment-banner-promise span { font-size: 11px; }
   .fee-strip { align-items: flex-start; gap: 20px; padding: 22px 18px; }
   .price-block { flex-basis: 118px; flex-shrink: 0; }
   .price { font-size: 28px; }
@@ -451,3 +472,6 @@ a.partner-mark:focus-visible { outline-offset: 3px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+.footer-management-links { display: flex; flex-wrap: wrap; gap: 22px; }
+.footer-management-links a { display: inline-flex; min-height: 44px; align-items: center; }
