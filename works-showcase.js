@@ -19,7 +19,8 @@
   };
   const cleanItem = item => ({
     id: String(item?.id || ''), title: String(item?.title || '未命名作品'),
-    poster: mediaURL(item?.poster), video: mediaURL(item?.video), kind: String(item?.kind || '')
+    poster: mediaURL(item?.poster), video: mediaURL(item?.video), kind: String(item?.kind || ''),
+    details: item?.details || null
   });
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -31,7 +32,7 @@
     if (!wall) return;
     const message = wall.querySelector('[data-works-wall-message]');
     if (!items.length) { message.textContent = '作品陆续上线，敬请期待。'; return; }
-    message.textContent = '观看完整作品，了解每一帧的创作。';
+    message.textContent = '从故事概念到画面呈现，了解作品背后的创作。';
     const rows = wall.querySelectorAll('.works-wall-row');
     rows.forEach((row, rowIndex) => {
       const source = items.filter(item => item.poster);
@@ -51,6 +52,7 @@
   const dialog = document.getElementById('works-media-dialog');
   const mediaStage = dialog?.querySelector('[data-works-media-stage]');
   const mediaStatus = dialog?.querySelector('[data-works-media-status]');
+  const detailsBody = dialog?.querySelector('[data-works-description]');
   let returnFocus = null;
   let previousOverflow = '';
   const openWork = (item, trigger) => {
@@ -59,6 +61,24 @@
     previousOverflow = document.body.style.overflow;
     document.getElementById('works-media-title').textContent = item.title;
     mediaStage.replaceChildren(); mediaStatus.hidden = true;
+    dialog.classList.toggle('works-media-dialog--details', Boolean(item.details));
+    if (detailsBody) {
+      detailsBody.replaceChildren(); detailsBody.hidden = !item.details;
+      if (item.details) {
+        const details = item.details;
+        if (details.category) detailsBody.append(element('p', 'works-detail-category', details.category));
+        const facts = element('dl', 'works-detail-facts');
+        (details.facts || []).forEach(fact => {
+          const row = element('div'); row.append(element('dt', '', fact.label), element('dd', '', fact.value)); facts.append(row);
+        });
+        if (facts.childElementCount) detailsBody.append(facts);
+        (details.sections || []).forEach(section => {
+          const block = element('section', 'works-detail-section');
+          block.append(element('h3', '', section.title), element('p', '', section.text)); detailsBody.append(block);
+        });
+        if (details.sourceNote) detailsBody.append(element('p', 'works-detail-source', details.sourceNote));
+      }
+    }
     let media;
     if (item.video) {
       media = element('video'); media.controls = true; media.playsInline = true;
@@ -72,7 +92,7 @@
       mediaStatus.textContent = '作品暂时无法加载，请关闭后重试。'; mediaStatus.hidden = false;
     }, { once: true });
     mediaStage.append(media);
-    dialog.showModal(); document.body.style.overflow = 'hidden';
+    dialog.showModal(); dialog.scrollTop = 0; document.body.style.overflow = 'hidden';
     if (item.video) media.play().catch(() => { /* 若浏览器阻止自动开始，保留原生播放按钮。 */ });
   };
   if (dialog) {
@@ -85,7 +105,7 @@
     dialog.addEventListener('close', () => {
       const video = mediaStage.querySelector('video');
       if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
-      mediaStage.replaceChildren(); document.body.style.overflow = previousOverflow;
+      mediaStage.replaceChildren(); detailsBody?.replaceChildren(); document.body.style.overflow = previousOverflow;
       returnFocus?.focus({ preventScroll: true });
     });
   }
@@ -122,10 +142,11 @@
   const renderGallery = items => {
     if (!rail) return;
     rail.replaceChildren();
+    rail.classList.toggle('works-gallery-rail--featured', items.length === 1 && Boolean(items[0].details));
     items.forEach(item => {
       const article = element('article', 'works-card');
       const button = element('button', 'works-card-button'); button.type = 'button';
-      button.setAttribute('aria-label', `${item.video ? '播放' : '查看'}作品：${item.title}`);
+      button.setAttribute('aria-label', `${item.video ? '播放作品' : item.details ? '查看作品简介' : '查看作品'}：${item.title}`);
       const cover = element('span', 'works-card-cover');
       if (item.poster) {
         const image = element('img'); image.src = item.poster; image.alt = ''; image.loading = 'lazy';
@@ -133,7 +154,11 @@
         cover.append(image);
       } else cover.append(element('span', 'works-card-fallback', '点击播放作品'));
       if (item.video) { const play = element('span', 'works-card-play', '▶'); play.setAttribute('aria-hidden', 'true'); cover.append(play); }
-      button.append(cover, element('span', 'works-card-title', item.title), element('span', 'works-card-meta', item.video ? '视频作品' : '图片作品'));
+      const copy = element('span', 'works-card-copy');
+      copy.append(element('span', 'works-card-title', item.title), element('span', 'works-card-meta', item.details?.category || (item.video ? '视频作品' : '图片作品')));
+      if (item.details?.summary) copy.append(element('span', 'works-card-summary', item.details.summary));
+      if (item.details) copy.append(element('span', 'works-card-action', item.video ? '播放作品' : '查看作品简介'));
+      button.append(cover, copy);
       button.addEventListener('click', () => openWork(item, button));
       article.append(button); rail.append(article);
     });

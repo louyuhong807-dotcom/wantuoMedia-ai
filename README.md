@@ -29,6 +29,7 @@
 - `works-showcase.css`、`works-showcase.js`：作品墙、播放器和手机滑动。
 - `works-admin.css`：作品管理页排版。
 - `works-data.js`、`works-feed.json`：读取由 Jekyll 自动生成的同源作品清单。
+- `works-details.json`：可选的作品简介，以不含扩展名的作品路径作为 key，保存分类、摘要、剧集信息和简介段落。
 - `works-local.json`：仅本地预览使用，正式发布时不读取。
 - `_config.yml`：作品清单构建配置；不要添加 `.nojekyll`。
 - `works/`：作品媒体目录，上传前请看其中的 README。

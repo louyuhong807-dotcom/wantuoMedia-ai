@@ -79,9 +79,52 @@
     return { items, error };
   }
 
-  async function requestFeed(name) {
+  function plainText(value, maxLength) {
+    if (typeof value !== 'string' && !(typeof value === 'number' && Number.isFinite(value))) return '';
+    return String(value)
+      .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '')
+      .replace(/<[^>]*>/g, '')
+      .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '')
+      .replace(/\r\n?/g, '\n')
+      .trim()
+      .slice(0, maxLength);
+  }
+
+  function mergeDetails(result, metadata) {
+    if (!metadata || metadata.version !== 1 || !Array.isArray(metadata.works)) return result;
+    const detailsByKey = new Map();
+    for (const record of metadata.works) {
+      if (!record || typeof record.key !== 'string') continue;
+      const key = record.key.normalize('NFC').toLowerCase();
+      if (detailsByKey.has(key)) continue;
+      const details = {
+        title: plainText(record.title, 160),
+        category: plainText(record.category, 100),
+        summary: plainText(record.summary, 4000),
+        facts: Array.isArray(record.facts) ? record.facts.slice(0, 20).map(fact => ({
+          label: plainText(fact && fact.label, 80),
+          value: plainText(fact && fact.value, 500)
+        })).filter(fact => fact.label && fact.value) : [],
+        sections: Array.isArray(record.sections) ? record.sections.slice(0, 20).map(section => ({
+          title: plainText(section && section.title, 160),
+          text: plainText(section && section.text, 10000)
+        })).filter(section => section.title || section.text) : [],
+        sourceNote: plainText(record.sourceNote, 800)
+      };
+      if (details.title || details.category || details.summary || details.facts.length ||
+          details.sections.length || details.sourceNote) detailsByKey.set(key, details);
+    }
+    return {
+      ...result,
+      items: result.items.map(item => detailsByKey.has(item.id)
+        ? { ...item, details: detailsByKey.get(item.id) }
+        : item)
+    };
+  }
+
+  async function requestJSON(name, timeoutMs) {
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 8000);
+    const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
     try {
       const response = await window.fetch(new URL(name, baseURL).href, {
         cache: 'no-cache',
@@ -89,9 +132,23 @@
         signal: controller.signal
       });
       if (!response.ok) throw new Error('Works feed unavailable');
-      return parseFeed(await response.json());
+      return await response.json();
     } finally {
       window.clearTimeout(timeout);
+    }
+  }
+
+  async function requestFeed(name) {
+    return parseFeed(await requestJSON(name, 8000));
+  }
+
+  async function addOptionalDetails(result) {
+    if (!result.items.length) return result;
+    try {
+      return mergeDetails(result, await requestJSON('works-details.json', 4000));
+    } catch (_) {
+      // Optional descriptions never block the published images or videos.
+      return result;
     }
   }
 
@@ -112,10 +169,10 @@
 
   function load() {
     if (!activeLoad) {
-      activeLoad = readPublishedWorks().finally(() => { activeLoad = null; });
+      activeLoad = readPublishedWorks().then(addOptionalDetails).finally(() => { activeLoad = null; });
     }
     return activeLoad;
   }
 
-  window.WantuoWorks = { load, _parseFeed: parseFeed };
+  window.WantuoWorks = { load, _parseFeed: parseFeed, _mergeDetails: mergeDetails };
 })();
