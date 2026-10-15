@@ -1,0 +1,61 @@
+/* Employment records: a compact roster, responsive as short profiles. */
+.case-banner .breadcrumb { flex-wrap: wrap; }
+.case-content { padding-block: 28px 64px; }
+.case-tabs { display: flex; gap: 32px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+.case-tabs a { display: inline-flex; align-items: center; min-height: 54px; border-bottom: 3px solid transparent; color: var(--muted); font-size: 15px; }
+.case-tabs a[aria-current="page"] { border-color: var(--orange); color: var(--blue); font-weight: 600; }
+.case-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; margin-bottom: 24px; }
+.case-filters label { display: grid; gap: 5px; font-size: 12px; color: var(--muted); }
+.case-filters select { min-width: 160px; max-width: 100%; min-height: 44px; padding: 9px 36px 9px 12px; border: 1px solid #cbd9e6; border-radius: 6px; background: white; color: var(--deep); font: inherit; font-size: 14px; }
+.case-filters select:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.case-reset { min-height: 44px; padding: 8px 4px; border: 0; background: transparent; color: var(--blue); font-size: 13px; }
+.case-context { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-bottom: 15px; font-size: 13px; color: var(--muted); }
+.case-context strong { color: var(--deep); font-weight: 500; }
+.case-column-head, .case-record { display: grid; grid-template-columns: 1.5fr 1.2fr .6fr 1.4fr .8fr; align-items: center; gap: 20px; }
+.case-column-head { padding: 13px 22px; border-radius: 6px 6px 0 0; background: var(--mist); color: var(--muted); font-size: 12px; }
+.case-records { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.case-record { padding: 22px; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.7; }
+.case-record:hover { background: #f9fbfd; }
+.case-person h2 { font-size: 16px; font-weight: 550; color: var(--deep); }
+.case-person p { margin-top: 3px; color: var(--muted); font-size: 13px; }
+.case-record dl { display: contents; margin: 0; }
+.case-record dl > div { min-width: 0; }
+.case-record dt { display: none; }
+.case-record dd { margin: 0; }
+.case-education span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+.case-wage { color: #b8561e; font-size: 19px; font-weight: 550; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.case-wage small { margin-left: 4px; color: var(--muted); font-size: 11px; font-weight: 400; }
+.case-empty { padding: 48px 20px; text-align: center; background: var(--mist); color: var(--muted); }
+.case-pagination { display: flex; align-items: center; justify-content: center; gap: 24px; margin-block: 26px 24px; }
+.case-pagination button { min-height: 42px; padding: 8px 18px; border: 1px solid var(--line); border-radius: 5px; color: var(--blue); background: white; font-size: 13px; }
+.case-pagination button:disabled { cursor: default; opacity: .4; }
+.case-pagination span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.case-source { max-width: 850px; margin-top: 22px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+.employment-case-links { display: flex; align-items: center; gap: 26px; margin: 0 0 30px; padding: 0 0 20px; border-bottom: 1px solid var(--line); }
+.employment-case-links > span { color: var(--muted); font-size: 13px; }
+.employment-case-links a { color: var(--blue); font-size: 14px; padding-block: 8px; }
+.employment-case-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 740px) {
+  .case-content { padding-block: 16px 40px; }
+  .case-tabs { gap: 26px; margin-bottom: 20px; }
+  .case-tabs a { font-size: 14px; }
+  .case-filters { gap: 12px; }
+  .case-filters label { flex: 1; min-width: 120px; }
+  .case-filters select { width: 100%; min-width: 0; }
+  .case-reset { flex-basis: 100%; margin-top: -10px; text-align: left; }
+  .case-context { font-size: 12px; }
+  .case-column-head { display: none; }
+  .case-record { position: relative; grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
+  .case-record:hover { background: transparent; }
+  .case-person { padding-right: 100px; }
+  .case-person h2 { font-size: 17px; }
+  .case-record dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; font-size: 13px; }
+  .case-record dt { display: block; color: var(--muted); font-size: 11px; margin-bottom: 2px; }
+  .case-record .case-role { grid-column: 1 / -1; }
+  .case-record .case-wage-cell { position: absolute; top: 22px; right: 0; text-align: right; }
+  .case-wage { font-size: 21px; }
+  .case-education span { display: block; margin-top: 2px; font-size: 11px; white-space: nowrap; }
+  .case-pagination { gap: 20px; }
+  .employment-case-links { flex-wrap: wrap; gap: 4px 24px; }
+  .employment-case-links > span { flex-basis: 100%; }
+}
