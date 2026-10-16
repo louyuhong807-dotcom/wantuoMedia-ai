@@ -8,8 +8,10 @@
   <title>万拓传媒AI漫剧实训</title>
   <link rel="icon" href="logo.jpg" type="image/jpeg">
   <link rel="stylesheet" href="styles-brand.css?v=20261015-works">
+  <link rel="stylesheet" href="hero-logo.css?v=20261016">
   <link rel="stylesheet" href="works-showcase.css?v=20261015-shennongjia">
   <script src="app-brand.js" defer></script>
+  <script src="hero-logo.js?v=20261016" defer></script>
   <script src="works-data.js?v=20261015-shennongjia" defer></script>
   <script src="works-showcase.js?v=20261015-shennongjia" defer></script>
 </head>
@@ -24,11 +26,17 @@
 </header>
 <main id="main">
 
-  <section class="home-hero" aria-labelledby="home-title">
-    <img class="home-hero-image" src="hero.png" alt="AI概念分镜：年轻女性站在雨后的城市列车站台" width="1672" height="941" fetchpriority="high">
-    <div class="home-hero-shade" aria-hidden="true"></div>
-    <div class="container home-hero-copy"><p class="hero-kicker">万拓传媒 AI漫剧实训</p><h1 id="home-title">让故事，<br>成为看得见的作品。</h1><p class="hero-description">从剧本分镜到剪辑成片，<br>系统练习AI漫剧制作。</p><a class="button button-primary" href="course.html">了解课程</a></div>
-    <p class="home-art-note">AI概念画面，非学员作品</p>
+  <section class="home-hero home-hero--brand" aria-labelledby="home-title">
+    <div class="container home-hero-layout">
+      <div class="home-hero-copy"><p class="hero-kicker">万拓传媒 AI漫剧实训</p><h1 id="home-title">让故事，<br>成为看得见的作品。</h1><p class="hero-description">从剧本分镜到剪辑成片，<br>系统练习AI漫剧制作。</p><a class="button button-primary" href="course.html">了解课程</a></div>
+      <div class="hero-brand-area">
+        <button class="hero-brand" type="button" data-logo-interactive aria-label="万拓传媒标志，触碰或按回车体验粒子互动">
+          <img class="hero-brand-fallback" src="logo.jpg" alt="ONE TOP 文化传媒 AIGC" width="1268" height="699" fetchpriority="high">
+          <canvas class="hero-logo-canvas" aria-hidden="true"></canvas>
+        </button>
+        <p class="hero-brand-hint" aria-hidden="true">触碰标志，灵感散开</p>
+      </div>
+    </div>
   </section>
   <div class="home-entry-bar container"><a href="company.html"><div><strong>关于万拓</strong><p>了解公司与合作伙伴</p></div><span aria-hidden="true">↗</span></a><a href="employment.html"><div><strong>大厂定向就业</strong><p>查看岗位、城市与薪资福利</p></div><span aria-hidden="true">↗</span></a></div>
   <section class="works-wall" data-works-wall aria-labelledby="works-wall-title">
